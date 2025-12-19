@@ -104,7 +104,7 @@ The JavaScript has been split into separate modules, improving code modularity:
 
 ## Code Source
 
-This page was built following a two-part YouTube tutorial series by Kevin Powell.
+This page was built by following a two-part YouTube tutorial series by Kevin Powell.
 
 - Part 1: [A deceptively complex form](https://youtu.be/jJgNgNNHqjk?si=9Qp3L9wWGQi9zsZD)
 - Part 2: [How to set custom error messages for your HTML forms](https://youtu.be/h5qqmE83Tes?si=pxcN7LAKH3yZISl9)
