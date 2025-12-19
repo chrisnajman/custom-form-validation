@@ -1,0 +1,168 @@
+.span-all {
+    grid-column: 1 / -1;
+}
+
+.contact {
+    background-color: var(--el-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    max-inline-size: 43.75rem;
+    margin-inline: auto;
+
+    h1 + p {
+        max-inline-size: fit-content;
+        margin-inline: auto;
+        text-align: center;
+    }
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    color: inherit;
+    margin-inline: auto;
+
+    @media (width > 31.25rem) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    label,
+    legend {
+        padding-block-end: 0.25em;
+    }
+    legend {
+        position: relative;
+        left: -0.1875rem;
+    }
+
+    fieldset {
+        padding: 0;
+        border: 0;
+
+        display: grid;
+
+        /* grid-template-columns: subgrid not available on fieldset */
+        gap: inherit;
+        grid-template-columns: inherit;
+    }
+
+    textarea {
+        resize: none;
+        box-sizing: content-box; /* ! */
+        height: 3lh; /* 3 x line-height */
+        background-color: inherit;
+    }
+
+    button {
+        background-color: var(--accent-colour);
+        color: var(--button-text);
+        border: 0;
+        padding: 0.75em 1.5em;
+        border-radius: var(--radius);
+        cursor: pointer;
+        &:focus-visible {
+            background-color: var(--body-fg);
+        }
+    }
+
+    @media (hover: hover) {
+        button:hover {
+            background-color: var(--body-fg);
+        }
+    }
+
+    input:user-invalid {
+        border-color: var(--red);
+    }
+}
+
+/* Makes item take up full width of cell */
+.form-group {
+    display: grid;
+
+    /* Stops layout breaking when error message appears */
+    grid-auto-rows: min-content;
+
+    [type="radio"],
+    [type="checkbox"] {
+        scale: 1.4;
+        accent-color: var(--accent-colour);
+    }
+}
+
+/* Add the required star */
+fieldset:has([required]) legend,
+.form-group:has(:not([type="radio"])[required]) label {
+    display: flex;
+
+    /* Make a space between label and star */
+    gap: 1ch;
+
+    &::after {
+        content: "*";
+        color: var(--red);
+    }
+}
+
+/* Checkbox error message fix */
+.form-group.wrap {
+    flex-wrap: wrap;
+}
+
+input,
+textarea,
+.form-group:has([type="radio"]) {
+    border: 0.0625rem solid var(--body-fg);
+    border-radius: var(--radius);
+    padding: 0.75em 1.5em;
+}
+
+.form-group:has([type="radio"], [type="checkbox"]) {
+    display: flex;
+    gap: 1ch;
+}
+
+/* Make entire area clickable */
+.form-group:has([type="radio"]) {
+    position: relative;
+
+    label::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        cursor: pointer;
+    }
+}
+
+.form-group:has([type="radio"]:checked) {
+    background-color: #333;
+    color: var(--white);
+    border-color: var(--accent-colour);
+}
+
+.error-message {
+    color: var(--red);
+
+    /* Target error message only inside fieldset and .wrap */
+    fieldset &,
+    .wrap & {
+        position: relative;
+        top: -1rem;
+    }
+    &:empty {
+        display: none;
+    }
+}
+.completion-message {
+    margin-block-start: 1em;
+    border: 0.125rem solid var(--green);
+    border-radius: var(--radius);
+    padding: 0.75em;
+    text-align: center;
+    background-color: var(--el-bg);
+    max-inline-size: fit-content;
+    margin-inline: auto;
+    &:empty {
+        display: none;
+    }
+}

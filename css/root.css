@@ -1,0 +1,58 @@
+:root {
+    overflow-y: scroll;
+    color-scheme: light;
+
+    /* 
+        If sticky header: Space between top of viewport and main content when skip link is activated.
+        Adjust  the value by sight.
+    
+    */
+    --skip-link-gap: 20rem;
+
+    --bold: 600;
+    --border-radius: 1.25rem;
+    --radius: 0.375rem;
+    --trim: trim-both cap alphabetic;
+    --shadow-top: 0 -0.25rem 0.375rem;
+    --shadow-bottom: 0 0.25rem 0.375rem;
+    --shadow-right-bottom: 0.25rem 0.25rem 0.5rem;
+    --warning: red;
+    --white: hsl(0, 0%, 100%);
+
+    /* light mode (default) */
+    --body-bg: #ccc;
+    --body-fg: #000;
+    --el-bg: #fff;
+    --accent-colour: blue;
+    --button-text: white;
+    --image-invert: 0;
+    --shadow-colour: rgb(0 0 0 / 0.2);
+    --red: #b10202;
+    /* --pale-green: hsl(148, 38%, 91%);
+    --green: hsl(169, 82%, 27%);
+    --light-teal: hsl(186, 15%, 59%);
+    --dark-teal: hsl(187, 24%, 22%); */
+}
+
+.darkmode {
+    color-scheme: dark;
+    --body-bg: #333;
+    --body-fg: #fff;
+    --el-bg: #000;
+    --accent-colour: aqua;
+    --button-text: black;
+    --image-invert: 1;
+    --shadow-colour: rgba(0, 0, 0, 0.5);
+    --red: #ff7a7a;
+}
+/* Automatic dark mode based on system preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body-bg: #333;
+        --body-fg: #fff;
+        --el-bg: #000;
+        --accent-colour: aqua;
+        --image-invert: 1;
+        --shadow-colour: rgba(0, 0, 0, 0.5);
+    }
+}

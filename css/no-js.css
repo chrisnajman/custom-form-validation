@@ -1,0 +1,26 @@
+.no-js {
+    & .theme-toggler,
+    & .loader,
+    & .loader::after {
+        display: none;
+    }
+}
+
+noscript p {
+    max-inline-size: 40ch;
+    margin-inline: auto;
+    border: 1px dashed var(--body-fg);
+    background-color: var(--el-bg);
+    color: var(--body-fg);
+    padding: 1em;
+    border-radius: 0.75rem;
+    text-align: center;
+    text-wrap: balance;
+
+    span {
+        display: block;
+        &:first-child {
+            font-weight: var(--bold);
+        }
+    }
+}
