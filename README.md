@@ -104,17 +104,16 @@ The JavaScript has been split into separate modules, improving code modularity:
 
 ## Code Source
 
-This page is inspired by — but not a direct copy of — a two-part YouTube tutorial series by Kevin Powell.
+This page was built following a two-part YouTube tutorial series by Kevin Powell.
 
 - Part 1: [A deceptively complex form](https://youtu.be/jJgNgNNHqjk?si=9Qp3L9wWGQi9zsZD)
 - Part 2: [How to set custom error messages for your HTML forms](https://youtu.be/h5qqmE83Tes?si=pxcN7LAKH3yZISl9)
 
-While the tutorials provided a solid foundation, the implementation here diverges in several ways:
+The implementation diverged in the following ways:
 
 - Changes to color choices to align with my own house style
 - Refactored and simplified JavaScript logic
 - Improved focus management and completion feedback
-- Enhanced accessibility handling for grouped controls
 - Modularised JavaScript structure
 - Additional progressive-enhancement considerations
 
