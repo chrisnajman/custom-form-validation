@@ -4,7 +4,7 @@
 
 .contact {
     background-color: var(--el-bg);
-    padding: 2rem;
+    padding: 2em;
     border-radius: var(--border-radius);
     max-inline-size: 43.75rem;
     margin-inline: auto;
@@ -165,4 +165,10 @@ textarea,
     &:empty {
         display: none;
     }
+}
+
+/** About page*/
+.about {
+    padding: 2em;
+    border-radius: var(--border-radius);
 }
