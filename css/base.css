@@ -199,7 +199,11 @@ a[href^="https"] {
 .main {
     display: flex;
     flex-direction: column;
-    padding: 2em 0.75em;
+    padding-block: 2em;
+
+    @media (width > 31.25rem) {
+        padding-inline: 0.75em;
+    }
     margin-block-start: 0;
 }
 

@@ -112,9 +112,15 @@ fieldset:has([required]) legend,
 input,
 textarea,
 .form-group:has([type="radio"]) {
+    padding: 0.75em 1.5em;
+}
+
+input,
+textarea,
+select,
+.form-group:has([type="radio"]) {
     border: 0.0625rem solid var(--body-fg);
     border-radius: var(--radius);
-    padding: 0.75em 1.5em;
 }
 
 .form-group:has([type="radio"], [type="checkbox"]) {
