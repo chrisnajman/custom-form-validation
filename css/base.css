@@ -98,7 +98,8 @@ h3 {
 
 button,
 input,
-textarea {
+textarea,
+select {
     font-size: inherit;
     font-family: inherit;
 }

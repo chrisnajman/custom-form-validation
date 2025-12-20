@@ -26,7 +26,7 @@ export default function formValidation() {
     return true
   }
 
-  form.querySelectorAll("input, textarea").forEach((input) => {
+  form.querySelectorAll("input, textarea, select").forEach((input) => {
     input.addEventListener("blur", () => {
       validateField(input)
     })
@@ -41,7 +41,7 @@ export default function formValidation() {
   form.addEventListener("submit", (e) => {
     let isValid = true
 
-    const fields = document.querySelectorAll("input, textarea")
+    const fields = document.querySelectorAll("input, textarea, select")
 
     fields.forEach((field) => {
       if (!validateField(field)) {

@@ -54,7 +54,7 @@
     <main class="main">
         <div class="contact flow" id="main-content" tabindex="0">
             <h1>Demo</h1>
-            <p>(No data is saved after form submission.)</p>
+            <p>All fields are required. (No data is saved after form submission.)</p>
             <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="fname">First Name</label>
@@ -85,6 +85,28 @@
                     </div>
                     <span class="error-message" aria-live="polite"></span>
                 </fieldset>
+                <div class="form-group">
+                    <label for="account-type">Account type</label>
+                    <select name="accountType" id="account-type" required>
+                        <option value="">Choose an item</option>
+                        <option value="premium">Premium</option>
+                        <option value="midtier">Mid tier</option>
+                        <option value="free">Free</option>
+                        <option value="none">None</option>
+                    </select>
+                    <span class="error-message" aria-live="polite"></span>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <select name="title" id="title" required>
+                        <option value="">Choose from the following</option>
+                        <option value="mr">Mr</option>
+                        <option value="mrs">Mrs</option>
+                        <option value="ms">Ms</option>
+                        <option value="prefernottosay">Prefer not to say</option>
+                    </select>
+                    <span class="error-message" aria-live="polite"></span>
+                </div>
                 <div class="form-group span-all">
                     <label for="message">Message</label>
                     <textarea id="message" name="message" required></textarea>
