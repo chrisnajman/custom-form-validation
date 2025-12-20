@@ -13,7 +13,10 @@
 body {
     font-size: clamp(1.156rem, 1.1182rem + 0.1757vw, 1.25rem);
     font-family: system-ui, sans-serif;
-    background-color: var(--body-bg);
+    background-color: var(--el-bg);
+    @media (width > 31.25rem) {
+        background-color: var(--body-bg);
+    }
     @media (prefers-reduced-motion: no-preference) {
         transition: background-color 250ms linear;
     }
@@ -184,7 +187,12 @@ a[href^="https"] {
 .footer {
     padding: 2em 1em;
     text-align: center;
-    box-shadow: var(--shadow-top) var(--shadow-colour);
+    border-block-start: 0.125rem solid currentColor;
+
+    @media (width > 31.25rem) {
+        box-shadow: var(--shadow-top) var(--shadow-colour);
+        border: 0;
+    }
 }
 
 .header {
@@ -193,16 +201,20 @@ a[href^="https"] {
     gap: 1rem;
     padding-block: 2em 1em;
     margin-block-start: 0;
-    box-shadow: var(--shadow-bottom) var(--shadow-colour);
+    border-block-end: 0.125rem solid currentColor;
+
+    @media (width > 31.25rem) {
+        box-shadow: var(--shadow-bottom) var(--shadow-colour);
+        border: 0;
+    }
 }
 
 .main {
     display: flex;
     flex-direction: column;
-    padding-block: 2em;
 
     @media (width > 31.25rem) {
-        padding-inline: 0.75em;
+        padding: 2em 0.75em;
     }
     margin-block-start: 0;
 }

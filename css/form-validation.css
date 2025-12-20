@@ -175,6 +175,8 @@ select,
 
 /** About page*/
 .about {
-    padding: 2em;
     border-radius: var(--border-radius);
+    @media (width > 31.25rem) {
+        padding: 2em;
+    }
 }
