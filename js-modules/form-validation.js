@@ -3,6 +3,14 @@ export default function formValidation() {
   form.setAttribute("novalidate", "")
   const completionMessage = document.getElementById("completion-message")
 
+  // Restore completion message after a real form submit + page reload
+  if (sessionStorage.getItem("formSubmitted") === "true") {
+    completionMessage.textContent = "Thanks. We will be in contact shortly."
+    completionMessage.focus()
+    // Remove completion message after reload or switching to new tab/page
+    sessionStorage.removeItem("formSubmitted")
+  }
+
   function validateField(field) {
     const errorEl =
       field.type === "radio"
@@ -21,6 +29,12 @@ export default function formValidation() {
   form.querySelectorAll("input, textarea").forEach((input) => {
     input.addEventListener("blur", () => {
       validateField(input)
+    })
+
+    // Clear completion message if user re-engages with (focusses within) the form
+    input.addEventListener("focus", () => {
+      completionMessage.textContent = ""
+      sessionStorage.removeItem("formSubmitted")
     })
   })
 
@@ -42,10 +56,7 @@ export default function formValidation() {
       return
     }
 
-    // valid but JS-handled
-    // e.preventDefault()
-    completionMessage.textContent = "Thanks. We will be in contact shortly."
-    completionMessage.focus()
-    form.reset()
+    // Submit form, but persist success state
+    sessionStorage.setItem("formSubmitted", "true")
   })
 }

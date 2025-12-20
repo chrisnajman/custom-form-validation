@@ -58,6 +58,7 @@ The JavaScript has been split into separate modules, improving code modularity:
   - Validates all fields on submit and focuses the first invalid control
   - Displays a completion message and resets the form on successful submission
   - Uses focus management to move attention to validation errors or success feedback
+  - Persists the completion message across a full form submission and page reload, clearing it after the next navigation or when the user refocuses a form control
 
 ### Other
 
