@@ -4,7 +4,11 @@
 
 .contact {
     background-color: var(--el-bg);
-    padding: 2em;
+    padding: 2em 0.75em;
+
+    @media (width > 31.25rem) {
+        padding: 2em;
+    }
     border-radius: var(--border-radius);
     max-inline-size: 43.75rem;
     margin-inline: auto;
